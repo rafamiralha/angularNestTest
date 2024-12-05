@@ -1,5 +1,12 @@
 .content-list{
-    gap: 40px;
+    gap:50px;
     padding: 10px;
     display: flex;
+    justify-content: start;
+    align-items: start;
+    font-size: large
+}
+
+.item{
+    width: 200px;
 }
