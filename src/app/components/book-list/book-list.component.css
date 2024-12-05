@@ -1,12 +1,17 @@
 .content-list{
+    height: 80px;
     gap:50px;
     padding: 10px;
+    margin: 20px;
     display: flex;
-    justify-content: start;
-    align-items: start;
-    font-size: large
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    border-radius: 10px;
+    background-color: rgb(212, 204, 204);
 }
 
 .item{
     width: 200px;
+
 }
