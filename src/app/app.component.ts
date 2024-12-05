@@ -9,7 +9,7 @@ import { HeaderComponent } from "./components/header/header.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BookListComponent, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent],
   providers: [
     HttpClient
   ],

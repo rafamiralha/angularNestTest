@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Book } from '../../entity/books.model';
-import { BookService } from '../books/book.service';
+import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BooksComponent } from '../books/books.component';
+import { HttpClient } from '@angular/common/http';
+import { Book } from '../../entity/books.model';
 
 @Component({
   selector: 'app-book-list',
-  imports: [CommonModule, BooksComponent],
+  imports: [CommonModule],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css',
 })
 export class BookListComponent {
-  constructor() {}
+  books: any[] = [];
+  
+  httpClient= Inject(HttpClient)
+
+  ngOnInit() {
+    this.httpClient.get('/api/products').subscribe((books:any ) =>{
+      this.books = books
+    });
+  }
 }
