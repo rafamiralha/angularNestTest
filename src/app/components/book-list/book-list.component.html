@@ -1,10 +1,16 @@
 <div>
-  <ul>
-    <li>
-      <div>NOME DO LIVRO</div>
-      <div class="books-details">
-        DETALHES DO LIVRO: <button onclick="">MAIS INFOS</button>
-      </div>
+  <ul >
+    @for (book of books; track books){
+    <li class="content-list">
+      <span>{{ book.name }}</span>
+      <span>{{book.author}}</span>
+      <span>DETALHES DO LIVRO:</span>
     </li>
+    }
+    <div class="">
+      
+
+      <button onclick="">MAIS INFOS</button>
+    </div>
   </ul>
 </div>

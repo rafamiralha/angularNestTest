@@ -1,0 +1,18 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "teste do name",
+      "author": "nome do autor",
+      "description": "descrição do livro",
+      "dateRelease": "01-02-2005"
+    },
+    {
+        "id": "2",
+        "name": "teste do name",
+        "author": "nome do autor",
+        "description": "descrição do livro",
+        "dateRelease": "01-02-2005"
+      }
+  ]
+}
