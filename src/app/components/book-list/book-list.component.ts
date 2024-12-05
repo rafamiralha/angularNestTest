@@ -17,6 +17,7 @@ export class BookListComponent {
 
   
   
+  
 
   ngOnInit() {
     this.bookService.GetAll().subscribe((books: any)=>{
