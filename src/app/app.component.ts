@@ -4,11 +4,12 @@ import { BookListComponent } from "./components/book-list/book-list.component";
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { HeaderComponent } from "./components/header/header.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BookListComponent],
+  imports: [RouterOutlet, BookListComponent, HeaderComponent],
   providers: [
     HttpClient
   ],

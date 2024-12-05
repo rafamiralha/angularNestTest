@@ -1,8 +1,5 @@
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{}}">
-      <span class="badge">{{}}</span> {{}}
-    </a>
-  </li>
+
+<ul class="books">
+  <div>NOME DO LIVRO</div>
+  <div class="books-details">DETALHES DO LIVRO: <button onclick="">MAIS INFOS</button><app-details-book class="details"></app-details-book></div>
 </ul>
