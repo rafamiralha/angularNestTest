@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { HeaderComponent } from "./components/header/header.component";
+import { HomeComponent } from './components/home/home.component';
 
 
 @Component({
