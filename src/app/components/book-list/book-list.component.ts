@@ -15,9 +15,9 @@ export class BookListComponent {
   bookService = inject(BookService)
   books: Book[] = [];
 
-  
-  
-  
+
+
+
 
   ngOnInit() {
     this.bookService.GetAll().subscribe((books: any)=>{
