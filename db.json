@@ -18,8 +18,22 @@
         "id": 3,
         "name": "Book 3",
         "description": "Terceiro livro",
-        "dateRelease": "07-12-2021",
+        "dateRelease": "15-07-1999",
         "author": "maria"
+      },
+      {
+        "id": 4,
+        "name": "Book 4",
+        "description": "Quarto livro",
+        "dateRelease": "13-08-2010",
+        "author": "pedro"
+      },
+      {
+        "id": 5,
+        "name": "Book 5",
+        "description": "Quinto livro",
+        "dateRelease": "25-09-2016",
+        "author": "joao"
       }
     ]
   }

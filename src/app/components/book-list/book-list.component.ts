@@ -1,7 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { BookService } from '../../service/book.service';
 import { Book } from '../../entity/books.model';
+
 
 @Component({
   selector: 'app-book-list',
@@ -10,13 +12,17 @@ import { Book } from '../../entity/books.model';
   styleUrl: './book-list.component.css',
 })
 export class BookListComponent {
-  books: any[] = [];
-  
-  httpClient= Inject(HttpClient)
+  bookService = inject(BookService)
+  books: Book[] = [];
+
+
+
+
 
   ngOnInit() {
-    this.httpClient.get('/api/products').subscribe((books:any ) =>{
-      this.books = books
-    });
+    this.bookService.GetAll().subscribe((books: any)=>{
+      console.log(books);
+      this.books = books;
+    })
   }
 }

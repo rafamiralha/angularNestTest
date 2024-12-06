@@ -3,6 +3,6 @@ import { BookListComponent } from './components/book-list/book-list.component';
 
 export const routes: Routes = [
    {path:'list', component: BookListComponent}
-
+  
 
 ];
