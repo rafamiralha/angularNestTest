@@ -1,1 +1,8 @@
-<h1 class="title">BEM VINDO À LIVRARIA ONLINE <br> LOGUE PARA ACESSAR OS SERVIÇOS!</h1>
+<div class="container">
+  <h1 *ngIf="show_content">BEM VINDO À LIVRARIA ONLINE <br> LOGUE PARA ACESSAR OS SERVIÇOS!</h1>
+  <button (click)=openModalLogin() *ngIf="show_content">Open</button>
+  <div  *ngIf="show_login">
+    <app-login class="login-content"></app-login>
+  </div>
+
+</div>
