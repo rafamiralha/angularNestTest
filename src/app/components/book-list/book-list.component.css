@@ -1,5 +1,5 @@
 .content-list{
-   
+
     height: 80px;
     gap:50px;
     padding: 15px;
@@ -15,4 +15,11 @@
 .item{
     width: 200px;
 
+}
+.container-lista{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
 }

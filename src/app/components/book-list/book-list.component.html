@@ -1,5 +1,12 @@
 <div>
   <h1>Lista de Livros</h1>
+  <div class="container-lista">
+    <Button class="btn-style" [routerLink]="['/add-book']">Adicionar Livro </Button><br /><Button
+      class="btn-style"
+    >
+      DELETAR
+    </Button>
+  </div>
   <ul>
     @for (book of books; track books){
     <li class="content-list">
@@ -7,13 +14,6 @@
       <span class="item">Autor: <br />{{ book.author }}</span>
       <div class="item">
         Detalhes do livro: <br /><button class="btn-style">Saiba mais</button>
-      </div>
-      <div>
-        <Button class="btn-style"> EDITAR </Button><br /><Button
-          class="btn-style"
-        >
-          DELETAR
-        </Button>
       </div>
     </li>
     }

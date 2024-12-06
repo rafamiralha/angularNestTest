@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-
-
+import { Component, inject } from '@angular/core';
+// import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+///ReactiveFormsModule
 @Component({
   selector: 'app-login',
   imports: [],
@@ -8,6 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  public email = "";
-  public password = "";
+  constructor(){
+
+  }
+  // loginForm  = new FormGroup({
+  //   email: new FormControl(''),
+  //   password: new FormControl('')
+  // });
+
+
+
 }
