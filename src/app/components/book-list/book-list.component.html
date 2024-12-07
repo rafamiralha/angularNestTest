@@ -6,13 +6,14 @@
     ><br />
   </div>
   <ul>
-    @for (book of books; track books){
+    @for (book of books; track book.id){
     <li class="content-list" >
       <span class="item">Nome do livro: <br />{{ book.name }}</span>
       <span class="item">Autor: <br />{{ book.author }}</span>
       <div class="item">
         <div>Detalhes do livro:<button class="btn-style">Saiba mais</button></div>
-        <Button class="btn-style" (click)="onEdit()"  > Editar </Button>
+        <Button class="btn-style"  (click)="onEdit(book)"> Editar </Button>
+       
         <Button class="btn-style"> Deletar </Button>
       </div>
     </li>

@@ -20,12 +20,12 @@ export class BookListComponent {
   @Output() edit = new EventEmitter();
   ngOnInit() {
     this.bookService.GetAll().subscribe((books: any)=>{
-      console.log(books);
       this.books = books;
     })
   }
-  onEdit(){
-  this.edit.emit()
-  this.router.navigateByUrl('/edit-book')
+  onEdit(book: Book){
+
+  this.router.navigateByUrl(`/edit-book/${book.id}`)
+
   }
 }

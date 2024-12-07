@@ -1,11 +1,60 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { BookService } from '../../../service/book.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Book } from '../../../entity/books-model';
 
 @Component({
   selector: 'app-edit-book',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './edit-book.component.html',
-  styleUrl: './edit-book.component.css'
+  styleUrl: './edit-book.component.css',
 })
 export class EditBookComponent {
+  bookService = inject(BookService);
+  router = inject(Router);
+  book: Book = inject(ActivatedRoute).snapshot.data['book'];
 
+  bookForm = new FormGroup({
+    name: new FormControl<string>('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    author: new FormControl<string>('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    description: new FormControl<string>('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    dateRelease: new FormControl<string>('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+  });
+
+  onSubmit() {
+    
+      if (!this.book || !this.book['id']) {
+        alert('Livro não está carregado corretamente!');
+        return console.log(this.book);
+      }
+    this.bookService
+      .Put(this.book['id'],{
+        name: this.bookForm.controls.name.value,
+        author: this.bookForm.controls.author.value,
+        description: this.bookForm.controls.description.value,
+        dateRelease: this.bookForm.controls.dateRelease.value,
+      })
+      .subscribe(() => {
+        alert("Editado com sucesso!");
+      });
+    this.router.navigateByUrl('/list');
+  }
 }
