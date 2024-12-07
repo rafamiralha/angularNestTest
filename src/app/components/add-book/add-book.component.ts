@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { BookService } from '../../service/book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
@@ -15,6 +16,8 @@ import { BookService } from '../../service/book.service';
 })
 export class AddBookComponent {
   bookService = inject(BookService);
+  router = inject(Router)
+
 
   // instância o formulário
   bookForm = new FormGroup({
@@ -46,5 +49,6 @@ export class AddBookComponent {
     .subscribe(() =>{
       alert('successs');
     })
+    this.router.navigateByUrl('/list');
   }
 }

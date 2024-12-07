@@ -37,10 +37,17 @@
     },
     {
       "id": "88a5",
-      "name": "Harry Potter e o Cálice de Fogo",
+      "name": "Harry Potter e a Pedra Filosofal",
       "author": "J. K . Rowling",
       "description": "Um mundo de magia e bruxaria",
       "dateRelease": "26-06-1997"
+    },
+    {
+      "id": "eff1",
+      "name": "Harry Potter e a Câmara Secreta",
+      "author": "J. K. Rowling",
+      "description": "Um mundo de magia e bruxaria ",
+      "dateRelease": "08-07-1999"
     }
   ],
   "users": [
