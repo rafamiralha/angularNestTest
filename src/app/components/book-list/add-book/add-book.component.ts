@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { BookService } from '../../service/book.service';
+import { BookService } from '../../../service/book.service';
 import { Router } from '@angular/router';
 
 @Component({
