@@ -23,8 +23,9 @@ export class BookListComponent {
       this.books = books;
     })
   }
-  onEdit(){
-  this.edit.emit()
-  this.router.navigateByUrl('/edit-book')
+  onEdit(book: Book){
+
+  this.router.navigateByUrl(`/edit-book/${book.id}`)
+
   }
 }

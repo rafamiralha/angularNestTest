@@ -8,11 +8,11 @@
       "author": "rafael"
     },
     {
-      "id": "gh43",
-      "name": "Book 2",
-      "description": "segundo livro",
-      "dateRelease": "29-08-2005",
-      "author": "jose"
+      "name": "Livro 2 EDITADO",
+      "author": "AUTOR 2 EDITADO",
+      "description": "RESUMO 2 EDITADO",
+      "dateRelease": "20-01-2001",
+      "id": "gh43"
     },
     {
       "id": "66dd",
