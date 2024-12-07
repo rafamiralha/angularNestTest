@@ -1,5 +1,6 @@
-<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="title" placeholder="Titulo">
-
-    <button type="submit">Salvar</button>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="container_addBook">
+  <div class="content_addBook">
+    <input type="text" formControlName="title" placeholder="Titulo" class="item_addBook"/>
+    <button type="submit" class="item_addBook">Salvar</button>
+  </div>
 </form>
