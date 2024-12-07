@@ -46,9 +46,11 @@ export class AddBookComponent {
       description: this.bookForm.controls.description.value,
       dateRelease: this.bookForm.controls.dateRelease.value
     })
-    .subscribe(() =>{
-      alert('successs');
-    })
-    this.router.navigateByUrl('/list');
+      .subscribe(() => {
+        alert('successs');
+      })
+    this.router.navigateByUrl('/list', { skipLocationChange: true }).then(() => {
+      this.router.navigate([decodeURI('/list')]);
+    });
   }
 }

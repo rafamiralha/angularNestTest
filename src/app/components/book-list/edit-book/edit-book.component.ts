@@ -40,7 +40,7 @@ export class EditBookComponent {
   });
 
   onSubmit() {
-    
+
       if (!this.book || !this.book['id']) {
         alert('Livro não está carregado corretamente!');
         return console.log(this.book);
@@ -55,6 +55,9 @@ export class EditBookComponent {
       .subscribe(() => {
         alert("Editado com sucesso!");
       });
-    this.router.navigateByUrl('/list');
+      // Re-renderiza a pagina do Angular
+    this.router.navigateByUrl('/list',   { skipLocationChange: true }).then(() => {
+      this.router.navigate([decodeURI('/list')]);
+    });
   }
 }
