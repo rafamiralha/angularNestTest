@@ -1,1 +1,5 @@
-<p>add-book works!</p>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="title" placeholder="Titulo">
+
+    <button type="submit">Salvar</button>
+</form>
