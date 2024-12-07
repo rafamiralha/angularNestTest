@@ -6,7 +6,7 @@
     ><br />
   </div>
   <ul>
-    @for (book of books; track books){
+    @for (book of books; track book.id){
     <li class="content-list" >
       <span class="item">Nome do livro: <br />{{ book.name }}</span>
       <span class="item">Autor: <br />{{ book.author }}</span>

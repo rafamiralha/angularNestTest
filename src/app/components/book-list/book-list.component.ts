@@ -20,7 +20,6 @@ export class BookListComponent {
   @Output() edit = new EventEmitter();
   ngOnInit() {
     this.bookService.GetAll().subscribe((books: any)=>{
-      console.log(books);
       this.books = books;
     })
   }
