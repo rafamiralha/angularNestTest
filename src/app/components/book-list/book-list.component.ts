@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookService } from '../../service/book.service';
-import { Book } from '../../entity/books.model';
+import { Book } from '../../entity/books-model';
 import { RouterLink } from '@angular/router';
 
 
