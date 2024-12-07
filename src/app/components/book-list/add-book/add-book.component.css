@@ -1,0 +1,21 @@
+.container_addBook{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    max-width: 600px;
+    height: 80vh;
+}
+
+.content_addBook{
+    gap: 8px;
+    max-width: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.item_addBook{
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}

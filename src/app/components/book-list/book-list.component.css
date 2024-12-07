@@ -1,18 +1,26 @@
-.content-list{
-   
-    height: 80px;
-    gap:50px;
-    padding: 15px;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
-    border-radius: 10px;
-    background-color: rgb(212, 204, 204);
+.content-list {
+  height: 100px;
+  gap: 50px;
+  padding: 15px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: large;
+  border-radius: 10px;
+  background-color: rgb(212, 204, 204);
+
 }
 
-.item{
-    width: 200px;
-
+.item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px
+}
+.container-lista {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
 }

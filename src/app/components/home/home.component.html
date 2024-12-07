@@ -1,1 +1,4 @@
-<h1 class="title">BEM VINDO À LIVRARIA ONLINE <br> LOGUE PARA ACESSAR OS SERVIÇOS!</h1>
+<div class="container">
+  <h1 *ngIf="show_content">BEM VINDO À LIVRARIA ONLINE <br> LOGUE PARA ACESSAR OS SERVIÇOS!</h1>
+  <Button class="btn-style" [routerLink]="['/login']">Open</Button>
+</div>
