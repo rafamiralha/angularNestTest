@@ -1,18 +1,17 @@
 <div>
   <h1>Lista de Livros</h1>
   <div class="container-lista">
-    <Button class="btn-style" [routerLink]="['/add-book']"
-      >Adicionar um Livro </Button
-    ><br />
+    <Button class="btn-style" [routerLink]="['/add-book']">Adicionar um Livro </Button><br />
   </div>
   <ul>
     @for (book of books; track book.id){
-    <li class="content-list" >
+    <li class="content-list">
       <span class="item">Nome do livro: <br />{{ book.name }}</span>
       <span class="item">Autor: <br />{{ book.author }}</span>
       <div class="item">
-        <div>Detalhes do livro:<button class="btn-style">Saiba mais</button></div>
-        <Button class="btn-style"  (click)="onEdit(book)"> Editar </Button>
+        <div>Detalhes do livro:<button class="btn-style" [routerLink]="['/details']" (click)="onShowDetail(book)">Saiba
+            mais</button></div>
+        <Button class="btn-style" [routerLink]="['/edit-book']" (click)="onEdit(book)"> Editar </Button>
 
         <Button class="btn-style" (click)="onDelete(book)"> Deletar </Button>
       </div>

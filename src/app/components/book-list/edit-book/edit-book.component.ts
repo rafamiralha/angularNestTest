@@ -17,8 +17,8 @@ import { Book } from '../../../entity/books-model';
 })
 export class EditBookComponent {
   bookService = inject(BookService);
-  router = inject(Router);
   book: Book = inject(ActivatedRoute).snapshot.data['book'];
+  router = inject(Router);
 
   bookForm = new FormGroup({
     name: new FormControl<string>('', {
@@ -46,16 +46,16 @@ export class EditBookComponent {
         return console.log(this.book);
       }
     this.bookService
-      .Put(this.book['id'],{
+      .Patch(this.book.id,{
         name: this.bookForm.controls.name.value,
         author: this.bookForm.controls.author.value,
         description: this.bookForm.controls.description.value,
-        dateRelease: this.bookForm.controls.dateRelease.value,
+        releaseDate: this.bookForm.controls.dateRelease.value,
       })
       .subscribe(() => {
         alert("Editado com sucesso!");
       });
-      // Re-renderiza a pagina do Angular
+      // Re-renderiza a pagina
     this.router.navigateByUrl('/list',   { skipLocationChange: true }).then(() => {
       this.router.navigate([decodeURI('/list')]);
     });

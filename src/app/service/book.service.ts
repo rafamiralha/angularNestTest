@@ -12,17 +12,17 @@ export class BookService {
   GetAll() {
     return this.httpClient.get('http://localhost:3000/books');
   }
-  Get(id: string) {
+  Get(id: number) {
     return this.httpClient.get(`http://localhost:3000/books/${id}`);
   }
   Post(payload: BookPayload) {
-    return this.httpClient.post('http://localhost:3000/books', payload);
+    return this.httpClient.post('http://localhost:3000/books/', payload);
   }
   //O patch também é usável neste caso
-  Put(id: string, payload: BookPayload) {
-    return this.httpClient.put(`http://localhost:3000/books/${id}`, payload);
+  Patch(id: number, payload: BookPayload) {
+    return this.httpClient.patch(`http://localhost:3000/books/${id}`, payload);
   }
-  Delete(id: string) {
+  Delete(id: number) {
     return this.httpClient.delete(`http://localhost:3000/books/${id}`);
   }
 
