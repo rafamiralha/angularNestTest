@@ -17,13 +17,26 @@ export const routes: Routes = [
 
          book: (route: ActivatedRouteSnapshot, state:RouterStateSnapshot)  => {
             const bookService = inject(BookService);
-            return bookService.Get(route.paramMap.get('id') as string)         
+            return bookService.Get(route.paramMap.get('id') as string)
          },
-         
+
       },
       loadComponent: () =>
-         import('./components/book-list/edit-book/edit-book.component').then((m) => m.EditBookComponent), 
+         import('./components/book-list/edit-book/edit-book.component').then((m) => m.EditBookComponent),
    },
+   {
+    path:'details/:id',
+    resolve:{
+
+       book: (route: ActivatedRouteSnapshot, state:RouterStateSnapshot)  => {
+          const bookService = inject(BookService);
+          return bookService.Get(route.paramMap.get('id') as string)
+       },
+
+    },
+    loadComponent: () =>
+       import('./components/book-list/details-book/details-book.component').then((m) => m.DetailsBookComponent),
+ },
 
    {path:'home', component: HomeComponent},
    {path:'login', component:LoginComponent},
