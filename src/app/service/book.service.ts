@@ -7,7 +7,7 @@ import { BookPayload } from '../entity/books-payload';
   providedIn: 'root',
 })
 export class BookService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
   books: Book[] = [];
   GetAll() {
     return this.httpClient.get('http://localhost:3000/books');
@@ -22,5 +22,8 @@ export class BookService {
   Put(id: string, payload: BookPayload) {
     return this.httpClient.put(`http://localhost:3000/books/${id}`, payload);
   }
-  
+  Delete(id: string) {
+    return this.httpClient.delete(`http://localhost:3000/books/${id}`);
+  }
+
 }

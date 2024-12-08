@@ -14,18 +14,29 @@ import { Router, RouterLink } from '@angular/router';
 export class BookListComponent {
   bookService = inject(BookService)
   books: Book[] = [];
-  
+
   router = inject(Router);
 
   @Output() edit = new EventEmitter();
+  @Output() delete = new EventEmitter();
   ngOnInit() {
-    this.bookService.GetAll().subscribe((books: any)=>{
+    this.bookService.GetAll().subscribe((books: any) => {
       this.books = books;
     })
   }
-  onEdit(book: Book){
+  onEdit(book: Book) {
+    this.edit.emit()
+    this.router.navigateByUrl(`/edit-book/${book.id}`)
 
-  this.router.navigateByUrl(`/edit-book/${book.id}`)
-
+  }
+  // Esta função deleta um livro cadastrado e recarrega a página
+  onDelete(book: Book) {
+    this.delete.emit()
+    this.bookService.Delete(book.id)
+      .subscribe(() => {
+        this.bookService.GetAll().subscribe((books: any) => {
+          this.books = books;
+        })
+      })
   }
 }
