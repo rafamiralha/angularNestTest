@@ -2,7 +2,7 @@ import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookService } from '../../service/book.service';
 import { Book } from '../../entity/books-model';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -15,6 +15,8 @@ export class BookListComponent {
   bookService = inject(BookService)
   books: Book[] = [];
 
+  book: Book = inject(ActivatedRoute).snapshot.data['book'];
+  
   router = inject(Router);
 
   @Output() edit = new EventEmitter();

@@ -46,11 +46,11 @@ export class EditBookComponent {
         return console.log(this.book);
       }
     this.bookService
-      .Put(this.book['id'],{
+      .Patch(this.book.id,{
         name: this.bookForm.controls.name.value,
         author: this.bookForm.controls.author.value,
         description: this.bookForm.controls.description.value,
-        dateRelease: this.bookForm.controls.dateRelease.value,
+        releaseDate: this.bookForm.controls.dateRelease.value,
       })
       .subscribe(() => {
         alert("Editado com sucesso!");

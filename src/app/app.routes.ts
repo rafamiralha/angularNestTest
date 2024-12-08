@@ -9,38 +9,44 @@ import { inject } from '@angular/core';
 
 
 export const routes: Routes = [
-   {path:'list', component: BookListComponent},
-   {path:'add-book', component:AddBookComponent},
-   {
-      path:'edit-book/:id',
-      resolve:{
+  { path: 'list', component: BookListComponent },
+  { path: 'add-book', component: AddBookComponent },
+  {
+    path: 'edit-book/:id',
+    resolve: {
 
-         book: (route: ActivatedRouteSnapshot, state:RouterStateSnapshot)  => {
-            const bookService = inject(BookService);
-            return bookService.Get(route.paramMap.get('id') as string)
-         },
-
+      book: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+        const bookService = inject(BookService);
+        const id = Number(route.paramMap.get('id')); // Converte para número
+        return bookService.Get(id)
       },
-      loadComponent: () =>
-         import('./components/book-list/edit-book/edit-book.component').then((m) => m.EditBookComponent),
-   },
-   {
-    path:'details/:id',
-    resolve:{
-
-       book: (route: ActivatedRouteSnapshot, state:RouterStateSnapshot)  => {
-          const bookService = inject(BookService);
-          return bookService.Get(route.paramMap.get('id') as string)
-       },
 
     },
     loadComponent: () =>
-       import('./components/book-list/details-book/details-book.component').then((m) => m.DetailsBookComponent),
- },
+      import('./components/book-list/edit-book/edit-book.component').then((m) => m.EditBookComponent),
+  },
+  {
+    path: 'details/:id',
+    resolve: {
 
-   {path:'home', component: HomeComponent},
-   {path:'login', component:LoginComponent},
-   {path: '',   redirectTo: 'home', pathMatch: 'full'}
+      book: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+        const bookService = inject(BookService);
+        const id = Number(route.paramMap.get('id'));
+        console.log(id) // Converte para número
+        return bookService.Get(id)
+
+        // const convertedBook = bookService.Get(route.paramMap.get('id'))
+
+      },
+
+    },
+    loadComponent: () =>
+      import('./components/book-list/details-book/details-book.component').then((m) => m.DetailsBookComponent),
+  },
+
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 
 ];
